@@ -7,6 +7,7 @@ apt-get install -y \
   kali-tools-top10 \
   autopsy \
   cutycapt \
+  aircrack-ng \
   dirbuster \
   faraday \
   fern-wifi-cracker \
