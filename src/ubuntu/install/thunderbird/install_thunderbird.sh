@@ -2,7 +2,7 @@
 set -ex
 
 # Install
-if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|almalinux9|almalinux8|fedora39|fedora40) ]]; then
+if [[ "${DISTRO}" == @(oracle8|rockylinux9|rockylinux8|oracle9|rhel9|almalinux9|almalinux8|fedora39|fedora40) ]]; then
   dnf install -y thunderbird
   if [ -z ${SKIP_CLEAN+x} ]; then
     dnf clean all
@@ -47,6 +47,9 @@ if [[ "${DISTRO}" == "fedora39" ]]; then
 elif [[ "${DISTRO}" == "fedora40" ]]; then
   cp /usr/share/applications/org.mozilla.thunderbird.desktop $HOME/Desktop/
   chmod +x $HOME/Desktop/org.mozilla.thunderbird.desktop
+elif [[ "${DISTRO}" == "opensuse" ]]; then
+  cp /usr/share/applications/thunderbird-esr.desktop $HOME/Desktop/
+  chmod +x $HOME/Desktop/thunderbird-esr.desktop
 else
   cp /usr/share/applications/thunderbird.desktop $HOME/Desktop/
   chmod +x $HOME/Desktop/thunderbird.desktop
